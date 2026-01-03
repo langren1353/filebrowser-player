@@ -9,7 +9,7 @@ builds:
   - env:
       - CGO_ENABLED=0
     ldflags:
-      - -s -w -X github.com/filebrowser/filebrowser/v2/version.Version={{ .Version }} -X github.com/filebrowser/filebrowser/v2/version.CommitSHA={{ .ShortCommit }}
+      - -s -w -X github.com/langren1353/filebrowser-player/v2/version.Version={{ .Version }} -X github.com/langren1353/filebrowser-player/v2/version.CommitSHA={{ .ShortCommit }}
     main: main.go
     binary: filebrowser
     goos:
@@ -55,8 +55,8 @@ dockers:
     goos: linux
     goarch: amd64
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64"
-      - "filebrowser/filebrowser:v{{ .Major }}-amd64"
+      - "langren1353/filebrowser-player:{{ .Tag }}-amd64"
+      - "langren1353/filebrowser-player:v{{ .Major }}-amd64"
     extra_files:
       - docker
   - dockerfile: Dockerfile
@@ -72,8 +72,8 @@ dockers:
     goos: linux
     goarch: arm64
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64"
-      - "filebrowser/filebrowser:v{{ .Major }}-arm64"
+      - "langren1353/filebrowser-player:{{ .Tag }}-arm64"
+      - "langren1353/filebrowser-player:v{{ .Major }}-arm64"
     extra_files:
       - docker
   - dockerfile: Dockerfile
@@ -90,8 +90,8 @@ dockers:
     goarch: arm
     goarm: "6"
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-armv6"
-      - "filebrowser/filebrowser:v{{ .Major }}-armv6"
+      - "langren1353/filebrowser-player:{{ .Tag }}-armv6"
+      - "langren1353/filebrowser-player:v{{ .Major }}-armv6"
     extra_files:
       - docker
   - dockerfile: Dockerfile
@@ -108,8 +108,8 @@ dockers:
     goarch: arm
     goarm: "7"
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-armv7"
-      - "filebrowser/filebrowser:v{{ .Major }}-armv7"
+      - "langren1353/filebrowser-player:{{ .Tag }}-armv7"
+      - "langren1353/filebrowser-player:v{{ .Major }}-armv7"
     extra_files:
       - docker
 
@@ -127,8 +127,8 @@ dockers:
     goos: linux
     goarch: amd64
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64-s6"
-      - "filebrowser/filebrowser:v{{ .Major }}-amd64-s6"
+      - "langren1353/filebrowser-player:{{ .Tag }}-amd64-s6"
+      - "langren1353/filebrowser-player:v{{ .Major }}-amd64-s6"
     extra_files:
       - docker
   - dockerfile: Dockerfile.s6
@@ -144,40 +144,40 @@ dockers:
     goos: linux
     goarch: arm64
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64-s6"
-      - "filebrowser/filebrowser:v{{ .Major }}-arm64-s6"
+      - "langren1353/filebrowser-player:{{ .Tag }}-arm64-s6"
+      - "langren1353/filebrowser-player:v{{ .Major }}-arm64-s6"
     extra_files:
       - docker
 
 docker_manifests:
-  - name_template: "filebrowser/filebrowser:latest"
+  - name_template: "langren1353/filebrowser-player:latest"
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64"
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64"
-      - "filebrowser/filebrowser:{{ .Tag }}-armv7"
-  - name_template: "filebrowser/filebrowser:{{ .Tag }}"
+      - "langren1353/filebrowser-player:{{ .Tag }}-amd64"
+      - "langren1353/filebrowser-player:{{ .Tag }}-arm64"
+      - "langren1353/filebrowser-player:{{ .Tag }}-armv7"
+  - name_template: "langren1353/filebrowser-player:{{ .Tag }}"
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64"
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64"
-      - "filebrowser/filebrowser:{{ .Tag }}-armv7"
-  - name_template: "filebrowser/filebrowser:v{{ .Major }}"
+      - "langren1353/filebrowser-player:{{ .Tag }}-amd64"
+      - "langren1353/filebrowser-player:{{ .Tag }}-arm64"
+      - "langren1353/filebrowser-player:{{ .Tag }}-armv7"
+  - name_template: "langren1353/filebrowser-player:v{{ .Major }}"
     image_templates:
-      - "filebrowser/filebrowser:v{{ .Major }}-amd64"
-      - "filebrowser/filebrowser:v{{ .Major }}-arm64"
-      - "filebrowser/filebrowser:v{{ .Major }}-armv7"
+      - "langren1353/filebrowser-player:v{{ .Major }}-amd64"
+      - "langren1353/filebrowser-player:v{{ .Major }}-arm64"
+      - "langren1353/filebrowser-player:v{{ .Major }}-armv7"
   ## s6 image manifests
-  - name_template: "filebrowser/filebrowser:s6"
+  - name_template: "langren1353/filebrowser-player:s6"
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64-s6"
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64-s6"
-  - name_template: "filebrowser/filebrowser:{{ .Tag }}-s6"
+      - "langren1353/filebrowser-player:{{ .Tag }}-amd64-s6"
+      - "langren1353/filebrowser-player:{{ .Tag }}-arm64-s6"
+  - name_template: "langren1353/filebrowser-player:{{ .Tag }}-s6"
     image_templates:
-      - "filebrowser/filebrowser:{{ .Tag }}-amd64-s6"
-      - "filebrowser/filebrowser:{{ .Tag }}-arm64-s6"
-  - name_template: "filebrowser/filebrowser:v{{ .Major }}-s6"
+      - "langren1353/filebrowser-player:{{ .Tag }}-amd64-s6"
+      - "langren1353/filebrowser-player:{{ .Tag }}-arm64-s6"
+  - name_template: "langren1353/filebrowser-player:v{{ .Major }}-s6"
     image_templates:
-      - "filebrowser/filebrowser:v{{ .Major }}-amd64-s6"
-      - "filebrowser/filebrowser:v{{ .Major }}-arm64-s6"
+      - "langren1353/filebrowser-player:v{{ .Major }}-amd64-s6"
+      - "langren1353/filebrowser-player:v{{ .Major }}-arm64-s6"
 
 homebrew_casks:
   - name: filebrowser
@@ -187,7 +187,7 @@ homebrew_casks:
     commit_author:
       name: FileBrowser Robot
       email: robot@filebrowser.org
-    homepage: https://github.com/filebrowser/filebrowser
+    homepage: https://github.com/langren1353/filebrowser-player
     description: File Browser is a create-your-own-cloud-kind of software where you can install it on a server, direct it to a path and then access your files through a nice web interface
     hooks:
       post:
