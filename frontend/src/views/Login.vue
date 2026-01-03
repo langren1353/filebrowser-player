@@ -53,12 +53,14 @@ import {
   recaptcha,
   recaptchaKey,
   signup,
+  enableGuest,
 } from "@/utils/constants";
 import { inject, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRoute, useRouter } from "vue-router";
 
 // Define refs
+
 const createMode = ref<boolean>(false);
 const error = ref<string>("");
 const username = ref<string>("");
@@ -69,6 +71,7 @@ const route = useRoute();
 const router = useRouter();
 const { t } = useI18n({});
 // Define functions
+const isFromLogOut = (route.query.redirect == "/files/")
 const toggleMode = () => (createMode.value = !createMode.value);
 
 const $showError = inject<IToastError>("$showError")!;
@@ -127,9 +130,17 @@ const submit = async (event: Event) => {
 };
 
 // Run hooks
-onMounted(() => {
+onMounted(async() => {
+  if (enableGuest && !isFromLogOut) {
+    try {
+      await auth.login("guest", "guest", "");
+      debugger
+      await router.push({ path: "/files/" });
+    } catch (e) {
+      error.value = t("login.guestLoginFail" + e);
+    }
+  }
   if (!recaptcha) return;
-
   window.grecaptcha.ready(function () {
     window.grecaptcha.render("recaptcha", {
       sitekey: recaptchaKey,

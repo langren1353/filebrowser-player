@@ -111,6 +111,7 @@
     "help": "Ayuda"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Crear una cuenta",
     "loginInstead": "Usuario ya existente",
     "password": "Contraseña",
@@ -189,7 +190,8 @@
     "types": "Tipos",
     "video": "Vídeo"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Ace editor theme",
     "admin": "Admin",
     "administrator": "Administrador",

@@ -111,6 +111,7 @@
     "help": "Hjálp"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Búa til nýjan aðgang",
     "loginInstead": "Þú ert þegar með aðgang",
     "password": "Lykilorð",
@@ -189,7 +190,8 @@
     "types": "Skrárgerðir",
     "video": "Myndbönd"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Ace editor theme",
     "admin": "Stjórnandi",
     "administrator": "Stjórnandi",

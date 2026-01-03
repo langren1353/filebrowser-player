@@ -111,6 +111,7 @@
     "help": "עזרה"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "צור חשבון",
     "loginInstead": "כבר יש לי חשבון",
     "password": "סיסמא",
@@ -189,7 +190,8 @@
     "types": "סוגים",
     "video": "וידאו"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Ace editor theme",
     "admin": "מנהל",
     "administrator": "מנהל ראשי",

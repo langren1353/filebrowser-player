@@ -9,6 +9,7 @@ import (
 )
 
 type settingsData struct {
+  EnableGuest           bool                  `json:"enableGuest"`
 	Signup                bool                  `json:"signup"`
 	HideLoginButton       bool                  `json:"hideLoginButton"`
 	CreateUserDir         bool                  `json:"createUserDir"`
@@ -25,6 +26,7 @@ type settingsData struct {
 
 var settingsGetHandler = withAdmin(func(w http.ResponseWriter, r *http.Request, d *data) (int, error) {
 	data := &settingsData{
+	  EnableGuest:           d.settings.EnableGuest,
 		Signup:                d.settings.Signup,
 		HideLoginButton:       d.settings.HideLoginButton,
 		CreateUserDir:         d.settings.CreateUserDir,
@@ -49,6 +51,7 @@ var settingsPutHandler = withAdmin(func(_ http.ResponseWriter, r *http.Request, 
 		return http.StatusBadRequest, err
 	}
 
+  d.settings.EnableGuest = req.EnableGuest
 	d.settings.Signup = req.Signup
 	d.settings.CreateUserDir = req.CreateUserDir
 	d.settings.MinimumPasswordLength = req.MinimumPasswordLength
