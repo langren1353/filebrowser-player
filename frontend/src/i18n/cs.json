@@ -105,6 +105,7 @@
     "help": "Nápověda"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Vytvořit účet",
     "loginInstead": "Již máte účet",
     "password": "Heslo",
@@ -171,7 +172,8 @@
     "types": "Typy",
     "video": "Video"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Ace editor theme",
     "admin": "Admin",
     "administrator": "Administrátor",

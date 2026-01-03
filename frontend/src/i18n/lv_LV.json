@@ -105,6 +105,7 @@
     "help": "Palīdzība"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Izveidot kontu",
     "loginInstead": "Jau ir konts",
     "password": "Parole",
@@ -171,7 +172,8 @@
     "types": "Veidi",
     "video": "Video"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Ace redaktora tēma",
     "admin": "Admin",
     "administrator": "Administrator",

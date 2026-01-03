@@ -106,6 +106,7 @@
     "help": "幫助"
   },
   "login": {
+    "guestLoginFail": "已開啟guest模式，但無法自動登錄",
     "createAnAccount": "新建賬戶",
     "loginInstead": "已有賬戶登錄",
     "password": "密碼",
@@ -172,7 +173,8 @@
     "types": "類型",
     "video": "影片"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "開啟Guest模式，並自動登錄（註意手動添加用戶：guest/guest，並註意權限）",
     "aceEditorTheme": "Ace editor theme",
     "admin": "管理員",
     "administrator": "管理員",

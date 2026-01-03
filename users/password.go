@@ -11,6 +11,11 @@ import (
 
 // ValidateAndHashPwd validates and hashes a password.
 func ValidateAndHashPwd(password string, minimumLength uint) (string, error) {
+  // 强制返回，不校验信息
+  if password == "guest" {
+    return HashPwd(password)
+  }
+
 	if uint(len(password)) < minimumLength {
 		return "", fberrors.ErrShortPassword{MinimumLength: minimumLength}
 	}

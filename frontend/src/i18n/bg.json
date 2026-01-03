@@ -105,6 +105,7 @@
     "help": "Помощ"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Създай акаунт",
     "loginInstead": "Вече имаш акаунт",
     "password": "Парола",
@@ -171,7 +172,8 @@
     "types": "Типове",
     "video": "Видео"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Тема на \"Ace редактор\"",
     "admin": "Админ",
     "administrator": "Администратор",

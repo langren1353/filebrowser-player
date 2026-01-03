@@ -105,6 +105,7 @@
     "help": "Pomoć"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Stvori korisnički račun",
     "loginInstead": "Imam korisnički račun",
     "password": "Lozinka",
@@ -171,7 +172,8 @@
     "types": "Tipovi",
     "video": "Video"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Ace editor theme",
     "admin": "Admin",
     "administrator": "Administrator",

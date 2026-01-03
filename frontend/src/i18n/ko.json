@@ -106,6 +106,7 @@
     "help": "도움말"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "계정 생성",
     "loginInstead": "이미 계정이 있습니다",
     "password": "비밀번호",
@@ -172,7 +173,8 @@
     "types": "Types",
     "video": "비디오"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Ace editor theme",
     "admin": "관리자",
     "administrator": "관리자",

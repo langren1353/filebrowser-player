@@ -105,6 +105,7 @@
     "help": "Βοήθεια"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Δημιουργία λογαριασμού",
     "loginInstead": "Έχετε ήδη λογαριασμό",
     "password": "Κωδικός πρόσβασης",
@@ -171,7 +172,8 @@
     "types": "Τύποι",
     "video": "Βίντεο"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Ace editor theme",
     "admin": "Διαχειριστής",
     "administrator": "Διαχειριστής",

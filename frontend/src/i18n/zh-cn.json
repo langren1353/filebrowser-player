@@ -106,6 +106,7 @@
     "help": "帮助"
   },
   "login": {
+    "guestLoginFail": "已开启guest模式，但无法自动登录",
     "createAnAccount": "创建用户",
     "loginInstead": "已有用户登录",
     "password": "密码",
@@ -172,7 +173,8 @@
     "types": "类型",
     "video": "视频"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "开启Guest模式，并自动登录（注意手动添加用户：guest/guest，并注意权限）",
     "aceEditorTheme": "Ace编辑器主题",
     "admin": "管理员",
     "administrator": "管理员",

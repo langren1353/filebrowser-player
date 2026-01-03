@@ -105,6 +105,7 @@
     "help": "Yardım"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Bir hesap oluşturun",
     "loginInstead": "Zaten hesabınız var mı",
     "password": "Şifre",
@@ -171,7 +172,8 @@
     "types": "Türler",
     "video": "Video"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Ace editor theme",
     "admin": "Yönetim",
     "administrator": "Yönetici",
