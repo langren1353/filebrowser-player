@@ -22,6 +22,7 @@ type AuthMethod string
 // Settings contain the main settings of the application.
 type Settings struct {
 	Key                   []byte              `json:"key"`
+	EnableGuest           bool                `json:"enableGuest"`
 	Signup                bool                `json:"signup"`
 	HideLoginButton       bool                `json:"hideLoginButton"`
 	CreateUserDir         bool                `json:"createUserDir"`

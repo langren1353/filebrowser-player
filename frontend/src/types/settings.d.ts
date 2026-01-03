@@ -1,4 +1,5 @@
 interface ISettings {
+  enableGuest: boolean;
   signup: boolean;
   createUserDir: boolean;
   hideLoginButton: boolean;

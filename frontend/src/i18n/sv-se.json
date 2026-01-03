@@ -111,6 +111,7 @@
     "help": "Hjälp"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Skapa ett konto",
     "loginInstead": "Du har redan ett konto",
     "password": "Lösenord",
@@ -189,7 +190,8 @@
     "types": "Typ",
     "video": "Video"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Tema för Ace editor",
     "admin": "Admin",
     "administrator": "Administratör",

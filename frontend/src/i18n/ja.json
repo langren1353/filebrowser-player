@@ -111,6 +111,7 @@
     "help": "ヘルプ"
   },
   "login": {
+    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "アカウントを作成",
     "loginInstead": "ログインする",
     "password": "パスワード",
@@ -189,7 +190,8 @@
     "types": "ファイルの種類",
     "video": "動画"
   },
-  "settings": {
+ "settings": {
+    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
     "aceEditorTheme": "Ace editor theme",
     "admin": "管理者",
     "administrator": "管理者",
