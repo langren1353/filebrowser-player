@@ -121,21 +121,18 @@ export function logout(reason?: string) {
   const authStore = useAuthStore();
   authStore.clearUser();
 
+  // 未传 reason 时默认为 manual，确保 Guest 模式能区分主动退出
+  const logoutReason = (typeof reason === "string" && reason.trim() !== "") ? reason : "manual";
+
   localStorage.setItem("jwt", "");
   if (noAuth) {
     window.location.reload();
   } else if (logoutPage !== "/login") {
     document.location.href = `${logoutPage}`;
   } else {
-    if (typeof reason === "string" && reason.trim() !== "") {
-      router.push({
-        path: "/login",
-        query: { "logout-reason": reason },
-      });
-    } else {
-      router.push({
-        path: "/login",
-      });
-    }
+    router.push({
+      path: "/login",
+      query: { "logout-reason": logoutReason },
+    });
   }
 }

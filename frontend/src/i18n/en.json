@@ -113,7 +113,8 @@
     "help": "Help"
   },
   "login": {
-    "guestLoginFail": "Guest mod on, buuto login failed",
+    "guestLoginFail": "Guest mode is on, but auto login failed",
+    "guestLoading": "Logging in as guest...",
     "createAnAccount": "Create an account",
     "loginInstead": "Already have an account",
     "password": "Password",
@@ -126,7 +127,8 @@
     "wrongCredentials": "Wrong credentials",
     "passwordTooShort": "Password must be at least {min} characters",
     "logout_reasons": {
-      "inactivity": "You have been logged out due to inactivity."
+      "inactivity": "You have been logged out due to inactivity.",
+      "manual": "You have been logged out."
     }
   },
   "permanent": "Permanent",

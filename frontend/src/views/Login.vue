@@ -1,6 +1,12 @@
 <template>
   <div id="login" :class="{ recaptcha: recaptcha }">
-    <form @submit="submit">
+    <!-- Guest 自动登录中，显示加载提示 -->
+    <div v-if="guestAutoLogging" class="guest-loading">
+      <img :src="logoURL" alt="File Browser" />
+      <h1>{{ name }}</h1>
+      <p>{{ t("login.guestLoading") }}</p>
+    </div>
+    <form v-else @submit="submit">
       <img :src="logoURL" alt="File Browser" />
       <h1>{{ name }}</h1>
       <p v-if="reason != null" class="logout-message">
@@ -66,12 +72,17 @@ const error = ref<string>("");
 const username = ref<string>("");
 const password = ref<string>("");
 const passwordConfirm = ref<string>("");
+const guestAutoLogging = ref<boolean>(false);
 
 const route = useRoute();
 const router = useRouter();
 const { t } = useI18n({});
-// Define functions
-const isFromLogOut = (route.query.redirect == "/files/")
+
+// 判断是否为用户主动退出：有 logout-reason 参数表示用户主动登出
+const isManualLogout = !!route.query["logout-reason"];
+// Guest 自动登录条件：开启了 Guest 模式 且 不是用户主动退出
+const shouldGuestAutoLogin = enableGuest && !isManualLogout;
+
 const toggleMode = () => (createMode.value = !createMode.value);
 
 const $showError = inject<IToastError>("$showError")!;
@@ -131,13 +142,17 @@ const submit = async (event: Event) => {
 
 // Run hooks
 onMounted(async() => {
-  if (enableGuest && !isFromLogOut) {
+  if (shouldGuestAutoLogin) {
+    guestAutoLogging.value = true;
     try {
       await auth.login("guest", "guest", "");
-      debugger
       await router.push({ path: "/files/" });
+      return;
     } catch (e) {
-      error.value = t("login.guestLoginFail" + e);
+      // Guest 自动登录失败，回退到手动登录表单
+      console.warn("Guest 自动登录失败:", e);
+      error.value = t("login.guestLoginFail");
+      guestAutoLogging.value = false;
     }
   }
   if (!recaptcha) return;
