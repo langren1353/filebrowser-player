@@ -113,7 +113,8 @@
     "help": "帮助"
   },
   "login": {
-    "guestLoginFail": "已开启guest模式，但无法自动登录",
+    "guestLoginFail": "已开启Guest模式，但自动登录失败",
+    "guestLoading": "正在以访客身份登录...",
     "createAnAccount": "注册账号",
     "loginInstead": "已有账号",
     "password": "密码",
@@ -126,7 +127,8 @@
     "wrongCredentials": "用户名或密码错误",
     "passwordTooShort": "密码长度至少为 {min} 位字符",
     "logout_reasons": {
-      "inactivity": "因长时间未操作，系统已自动登出."
+      "inactivity": "因长时间未操作，系统已自动登出.",
+      "manual": "您已退出登录。"
     }
   },
   "permanent": "永久",
