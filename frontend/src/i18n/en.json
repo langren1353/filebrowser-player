@@ -128,7 +128,8 @@
     "passwordTooShort": "Password must be at least {min} characters",
     "logout_reasons": {
       "inactivity": "You have been logged out due to inactivity.",
-      "manual": "You have been logged out."
+      "manual": "You have been logged out.",
+      "expired": "Your session has expired. Please log in again."
     }
   },
   "permanent": "Permanent",
@@ -194,8 +195,8 @@
     "types": "Types",
     "video": "Video"
   },
- "settings": {
-    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
+  "settings": {
+    "enableGuest": "Guest mode: log in automatically as guest/guest (create that user and grant it the permissions you want first)",
     "aceEditorTheme": "Ace editor theme",
     "admin": "Admin",
     "administrator": "Administrator",

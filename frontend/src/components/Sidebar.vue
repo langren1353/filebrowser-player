@@ -203,7 +203,9 @@ export default {
     help() {
       this.showHover("help");
     },
-    logout: auth.logout,
+    // 显式传 manual：Guest 模式下用于区分"主动登出"与"会话超时"，
+    // 保证登出后停在登录表单，方便换账号登录
+    logout: () => auth.logout("manual"),
   },
   watch: {
     $route: {

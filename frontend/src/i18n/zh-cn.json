@@ -128,7 +128,8 @@
     "passwordTooShort": "密码长度至少为 {min} 位字符",
     "logout_reasons": {
       "inactivity": "因长时间未操作，系统已自动登出.",
-      "manual": "您已退出登录。"
+      "manual": "您已退出登录。",
+      "expired": "登录状态已失效，请重新登录。"
     }
   },
   "permanent": "永久",
@@ -194,8 +195,8 @@
     "types": "类型",
     "video": "视频"
   },
- "settings": {
-    "enableGuest": "开启Guest模式，并自动登录（注意手动添加用户：guest/guest，并注意权限）",
+  "settings": {
+    "enableGuest": "开启 Guest 模式：打开登录页会自动以 guest/guest 登录（需先创建该用户并配好权限）",
     "aceEditorTheme": "Ace编辑器主题",
     "admin": "管理员",
     "administrator": "管理员",

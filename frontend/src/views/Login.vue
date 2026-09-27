@@ -72,16 +72,19 @@ const error = ref<string>("");
 const username = ref<string>("");
 const password = ref<string>("");
 const passwordConfirm = ref<string>("");
-const guestAutoLogging = ref<boolean>(false);
 
 const route = useRoute();
 const router = useRouter();
 const { t } = useI18n({});
 
-// 判断是否为用户主动退出：有 logout-reason 参数表示用户主动登出
-const isManualLogout = !!route.query["logout-reason"];
-// Guest 自动登录条件：开启了 Guest 模式 且 不是用户主动退出
+// 只有用户主动登出（logout-reason=manual）才抑制自动登录，此时必须展示表单让用户换账号；
+// inactivity（会话超时）/expired（401）属于被动退出，仍然自动登录，否则访客会卡在登录页
+// （见 auth.ts 中 logout 的 reason 语义说明）
+const isManualLogout = route.query["logout-reason"] === "manual";
+// Guest 自动登录条件：开启了 Guest 模式 且 用户不是刚主动登出
 const shouldGuestAutoLogin = enableGuest && !isManualLogout;
+// 初始即置为“登录中”，避免自动登录期间先闪一帧登录表单
+const guestAutoLogging = ref<boolean>(shouldGuestAutoLogin);
 
 const toggleMode = () => (createMode.value = !createMode.value);
 
@@ -146,7 +149,8 @@ onMounted(async() => {
     guestAutoLogging.value = true;
     try {
       await auth.login("guest", "guest", "");
-      await router.push({ path: "/files/" });
+      // 沿用路由守卫写入的 redirect；直接跳 /files/ 会丢掉用户原本要访问的子路径
+      await router.push((route.query.redirect as string) || "/files/");
       return;
     } catch (e) {
       // Guest 自动登录失败，回退到手动登录表单

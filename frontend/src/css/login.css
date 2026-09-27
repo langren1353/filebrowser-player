@@ -33,6 +33,25 @@
   min-width: 304px;
 }
 
+/* Guest 自动登录中的加载态：与登录表单同样的居中布局 */
+#login .guest-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 17em;
+  width: 90%;
+  text-align: center;
+}
+
+/* 加载提示只是纯文本，不能沿用 #login p 的“可点击链接”样式 */
+#login .guest-loading p {
+  cursor: default;
+  text-align: center;
+  color: inherit;
+  text-transform: none;
+}
+
 #login #recaptcha {
   margin: 0.5em 0 0;
 }

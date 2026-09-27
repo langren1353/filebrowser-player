@@ -54,7 +54,9 @@ export async function fetchURL(
     );
 
     if (auth && res.status == 401) {
-      logout();
+      // 401 属于会话失效，不是用户主动登出；显式传 expired，
+      // 避免 Guest 自动登录被 Login.vue 误判为"主动登出"而抑制
+      logout("expired");
     }
 
     throw error;

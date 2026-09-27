@@ -115,13 +115,18 @@ export async function signup(username: string, password: string) {
   }
 }
 
+// logout 的 reason 语义（Login.vue 依赖它判断是否允许 Guest 自动登录）：
+//   manual               —— 用户主动点击登出，登录页必须停在表单，方便切换账号
+//   inactivity / expired —— 会话超时（token 到期）或被 401 踢出，属于被动退出，
+//                           不应阻止 Guest 自动登录，否则访客会被卡在登录页
+// 未传 reason、或传入的不是字符串（如 @click 直接绑定时的 MouseEvent）按 manual 兜底；
+// Sidebar.vue 已显式传 "manual"，此处兜底是为了兼容其它历史调用点。
 export function logout(reason?: string) {
   document.cookie = "auth=; Max-Age=0; Path=/; SameSite=Strict;";
 
   const authStore = useAuthStore();
   authStore.clearUser();
 
-  // 未传 reason 时默认为 manual，确保 Guest 模式能区分主动退出
   const logoutReason = (typeof reason === "string" && reason.trim() !== "") ? reason : "manual";
 
   localStorage.setItem("jwt", "");
