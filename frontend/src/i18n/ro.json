@@ -111,7 +111,6 @@
     "help": "Ajutor"
   },
   "login": {
-    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Crează cont",
     "loginInstead": "Am deja cont",
     "password": "Parola",
@@ -190,8 +189,7 @@
     "types": "Tipuri",
     "video": "Video"
   },
- "settings": {
-    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
+  "settings": {
     "aceEditorTheme": "Ace editor theme",
     "admin": "Admin",
     "administrator": "Administrator",

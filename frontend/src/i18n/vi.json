@@ -111,7 +111,6 @@
     "help": "Trợ giúp"
   },
   "login": {
-    "guestLoginFail": "Guest mod on, buuto login failed",
     "createAnAccount": "Tạo tài khoản",
     "loginInstead": "Đã có tài khoản",
     "password": "Mật khẩu",
@@ -190,8 +189,7 @@
     "types": "Loại",
     "video": "Video"
   },
- "settings": {
-    "enableGuest": "Open guest mod & guest auto login (Please add user：guest/guest and permission)",
+  "settings": {
     "aceEditorTheme": "Ace editor theme",
     "admin": "Quản trị viên",
     "administrator": "Người quản trị",
