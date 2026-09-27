@@ -172,7 +172,7 @@ docker_manifests:
       - "langren1353/filebrowser-player:v{{ .Major }}-amd64"
       - "langren1353/filebrowser-player:v{{ .Major }}-arm64"
       - "langren1353/filebrowser-player:v{{ .Major }}-armv7"
-  ## s6 image manifests
+  ## s6 image manifest
   - name_template: "langren1353/filebrowser-player:s6"
     image_templates:
       - "langren1353/filebrowser-player:{{ .Tag }}-amd64-s6"
